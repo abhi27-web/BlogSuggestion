@@ -47,7 +47,7 @@ def suggest_blogs():
     articles = get_news(topic)
 
     # Extract the article titles and URLs
-    suggestions = [{'title': article['title'], 'url': article['url']} for article in articles]
+    suggestions = [{'title': article['title'], 'url': article['url'], 'image': article['urlToImage'], 'content': article['content']} for article in articles]
 
     # Return the suggestions as JSON
     return jsonify({'suggestions': suggestions})
